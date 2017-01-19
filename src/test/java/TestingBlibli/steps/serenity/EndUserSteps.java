@@ -39,7 +39,7 @@ public class EndUserSteps extends ScenarioSteps {
 
     @Step
     public void should_see_page(String defin) {
-        assertThat(homePage.getDefinitions(defin), containsString(defin));
+        assertThat(homePage.getDefinitionsPage(defin), containsString(defin));
     }
 
     @Step

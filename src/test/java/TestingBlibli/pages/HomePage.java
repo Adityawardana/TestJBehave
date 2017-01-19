@@ -33,6 +33,9 @@ public class HomePage extends PageObject {
     @FindBy(className = "product-block")
     private WebElementFacade item;
 
+//    @FindBy(className = "product-list-thumbnails")
+//    private WebElementFacade productDescPage;
+
     public void close_popup(){
         try {
             WebElement notifpopup = getDriver().findElement(By.xpath("//body//*[@class='insider-opt-in-notification-button-container']"));
@@ -59,9 +62,19 @@ public class HomePage extends PageObject {
         item.click();
     }
 
+//    public String CheckPage(String defin) {
+//        productDescPage = find(By.xpath(".//*[@id='catalogProductListContentDiv']//*[div[contains(text(),'"+defin+"')]]"));
+//        return productDescPage.getText();
+//    }
+
     public String getDefinitions(String def) {
         WebElementFacade definitionList = find(By.xpath(".//*[@id='catalogProductListContentDiv']//*[div[contains(text(),'"+def+"')]]"));
         return definitionList.getText();
+    }
+
+    public String getDefinitionsPage(String defPage) {
+        WebElementFacade definitionListPage = find(By.xpath(".//*[@id='catalogProductListContentDiv']//*[div[contains(text(),'"+defPage+"')]]"));
+        return definitionListPage.getText();
     }
 
     public String getDefinitionsofDescription(String descriptiontxt) {
